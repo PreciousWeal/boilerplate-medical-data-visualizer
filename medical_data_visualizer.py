@@ -12,7 +12,8 @@ df['BMI'] = df['weight'] / (df['height_m'] ** 2)
 df['overweight'] = (df['BMI'] > 25).astype(int)
 
 # 3
-
+df['cholesterol'] = (df['cholesterol'] > 1).astype(int)
+df['gluc'] = (df['gluc'] > 1).astype(int)
 
 # 4
 def draw_cat_plot():

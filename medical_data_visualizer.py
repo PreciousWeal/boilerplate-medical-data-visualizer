@@ -65,6 +65,9 @@ def draw_heat_map():
         (df['weight'] <= df['weight'].quantile(0.975))
     ]
 
+    # Drop extra columns if present (e.g. 'BMI', 'height_m')
+    df_heat = df_heat.drop(columns=['BMI', 'height_m'], errors='ignore')
+    
     # 12
     # 2. Calculate the correlation matrix
     corr = df_heat.corr()
